@@ -107,5 +107,31 @@ Standard Method& New Technique\\
 \end{center}
 \end{table}
 
+\section{Technique 2}~\cite{Atharvaveda}
+This method works on those two digit numbers whose first digits add to 10 and last digits are same. For example 34 and 74, $3 + 7 = 10$ and $4 = 4$. The standard multiplication follows in the following way:\\
+\begin{center}\includegraphics[scale=0.5]{standard2.pdf}\end{center}
+In this technique we multiply the first digit of both numbers and add the second digit; this forms the first part of the answer. The second part is the square of the second digit. Then concatenate the two parts to get the final answer.
+\begin{center}\includegraphics[scale=0.5]{firstsame.pdf}\end{center}
+
+\subsection{Mathematical Reasoning}
+Below is the mathematical explanation of why this method actually works or in other words the proof of correctness.\\
+Let $xy$ and $ab$ be the two numbers, where x,y and a,b respectively denotes the two digits of the numbers.
+\begin{align}
+a + x = 10 \label{eq:3}\\
+b = y \label{eq:4}
+\end{align}
+
+\begin{align*} 
+xy \times ab&=(10x+y) \times (10a+b) \\ 
+&= 100ax + 10bx + 10ay + by\\
+&= 100ax + 10b(a+x) + b^2 \tag*{using (\ref{eq:4})}\\
+&= 100ax + 100b + b^2 \tag*{using (\ref{eq:3})}\\
+&= 100(ax + b) + b^2
+\end{align*}
+
+Hence the above specified technique is correct.
+%\newpage
+
+
 
 \end{document}
