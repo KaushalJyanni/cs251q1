@@ -1,0 +1,62 @@
+\documentclass[]{article}
+% \usepackage{datetime}
+% \newdate{date}{06}{03}{2017}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic	}
+\begin{document}
+
+\begin{titlepage}
+\center
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\textsc{\LARGE CS251}\\[0.5cm]
+\textsc{\Large Assignment 7}\\[0.5cm]
+\HRule \\[0.4cm]
+{ \huge \bfseries Multiplication Techniques}\\	 % Title of your document
+\HRule \\[1.5cm]
+\large\emph{Author:}
+\textsc{Kaushal Jyanni}\\
+% \emph{Date:} \displaydate{date}\\[2cm]
+\end{titlepage}
+
+\section{Introduction}
+There are various multiplication techniques in vedic multiplication. These techniques do not work on all numbers but in cases that it does, it provides a great way to perform fast multiplication. Some of them are described  below.
+
+\section{Technique 1}~\cite{wiki}
+
+This one works on special cases of two digit numbers; the numbers whose first digits are same and the last digits add to 10. For example 66 and 64, $6=6$, and $6+4=10$. The standard multiplication follows in the following way:\\
+\begin{center}\includegraphics[scale=0.5]{standard1.pdf}\end{center}
+But in this method we multiply the last two digits and write the product.Multiply the first digit with its successor and write their product. Now concatenate the two products.
+\begin{center}\includegraphics[scale=0.5]{firstsame.pdf}\end{center}
+If the number of digits in second part is not two then we can add suitable number of zeroes.
+For example:\\
+\begin{align*}
+31 \times 39 &= 3\times(3+1):1\times9\\
+&=1209\\
+\end{align*}
+
+\subsection{Mathematical Reasoning}
+Below is the mathematical explanation of why this method actually works or in other words the proof of correctness.\\
+Let $xy$ and $ab$ be the two numbers, where x,y and a,b respectively denotes the two digits of the numbers.
+
+\begin{align}
+a = x \label{eq:1}\\
+b + y =10 \label{eq:2}
+\end{align}
+
+\begin{align*}
+xy \times ab&=(10x+y) \times (10a+b) \\
+&= 100ax + 10bx + 10ay + by\\
+&= 100a^2 + 10a(b+y) + by \tag*{using (\ref{eq:1})}\\
+&= 100a^2 + 100a + by \tag*{using (\ref{eq:2})}\\
+&= 100a(a + 1) + by
+\end{align*}
+
+Hence the above specified technique is correct.
+
+
+
+\end{document}
