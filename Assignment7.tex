@@ -57,6 +57,55 @@ xy \times ab&=(10x+y) \times (10a+b) \\
 
 Hence the above specified technique is correct.
 
+\subsection{Pseudocode}
+\begin{algorithm}
+\caption{Calculate $x \times y$}
+\begin{algorithmic} 
+\REQUIRE $x_0 = y_0$ and $x_1 + y_1 = 10$
+\STATE $x_0 \leftarrow x/10$
+\STATE $x_1 \leftarrow x$ mod $10$
+\STATE $y_0 \leftarrow y/10$
+\STATE $y_1 \leftarrow y$ mod $10$
+\STATE $r \leftarrow x_1 \times y_1$
+\STATE $l \leftarrow x_0 \times (x_0 + 1)$
+\STATE Return $100 \times l + r$
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Extension For More Than Two Digits}
+Let the two no.s be x and y such that:
+\begin{align*}
+x &= x_nx_{n-1}.....x_{k+1}x_kx_{k-1}......x_1x_0\\
+y &=  y_ny_{n-1}.....y_{k+1}y_ky_{k-1}......y_1y_0
+\end{align*}
+where $x_i$ and $y_i$ are respectively the $i^{th}$ digit from units place of x and y respectively.\\
+IF\\
+\begin{align*}
+&x_kx_{k-1}......x_1x_0 + y_ky_{k-1}......y_1y_0 = 10^{k+1}\\
+&x_nx_{n-1}.....x_{k+1} = y_ny_{n-1}.....y_{k+1}
+\end{align*}
+then we can use this technique to calculate the multiple.\\
+\begin{align*}
+a_1 &=  x_nx_{n-1}.....x_{k+1}\\
+a_0 &=  x_kx_{k-1}......x_1x_0\\
+b_1 &= y_ny_{n-1}.....y_{k+1}\\
+b_0 &= y_ky_{k-1}......y_1y_0\\
+Therefore:\\
+x \times y &= a_1 \times (a_1 + 1) : a_0 \times b_0
+\end{align*}
+
+\subsection{Comparison}
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Standard Method& New Technique\\
+\hline
+\includegraphics[scale=0.5]{standard1.pdf}&\includegraphics[scale=0.5]{firstsame.pdf}\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
 
 
 \end{document}
