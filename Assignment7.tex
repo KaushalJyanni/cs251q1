@@ -132,6 +132,37 @@ xy \times ab&=(10x+y) \times (10a+b) \\
 Hence the above specified technique is correct.
 %\newpage
 
+\subsection{Pseudocode}
+\begin{algorithm}
+\caption{Calculate $x \times y$}
+\begin{algorithmic} 
+\REQUIRE $x_0 + y_0 = 10$ and $x_1 = y_1$
+\STATE $x_0 \leftarrow x/10$
+\STATE $x_1 \leftarrow x$ mod $10$
+\STATE $y_0 \leftarrow y/10$
+\STATE $y_1 \leftarrow y$ mod $10$
+\STATE $l \leftarrow (x_0 \times y_0) + y_1$
+\STATE $r \leftarrow y_1^2$
+\STATE Return $100 \times l + r$
+\end{algorithmic}
+\end{algorithm}
+\newpage
+\subsection{Comparison}
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Standard Method& New Technique\\
+\hline
+\includegraphics[scale=0.5]{standard2.pdf}&\includegraphics[scale=0.5]{lastsame.pdf}\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\bibliography{bibfile}{}
+\bibliographystyle{plain}
+ 
 
 
 \end{document}
